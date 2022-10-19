@@ -1,0 +1,4 @@
+dask-worker-space
+slurm*
+output_data
+.ipynb_checkpoints
