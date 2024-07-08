@@ -36,6 +36,13 @@ from scratch one will need to run the notebooks in the following order
    clusters the previous step and the processed daily data from step 1 to create
    individual files for each cluster that have daily data, stacked along the x-y
    dimensions
-4. `compare_cluster_distributions.ipynb`: Most of the analysis and plots are done here,
+4. `compare_cluster_distributions.ipynb`: Most of the analysis and many of the plots are done here,
    including the calculation of the timeseries, thresholds, compound extremes, and
-   durations.
+   durations. For the fraction of extremes plots, we output pickle files and then plot them in the next notebook for        efficiency.
+5. `compare_cluster_distributions_other_clusters.ipynb`: The fraction of extremes is computed for the remaining clusters (supp figures)
+6. `plots_frac_extreme`: Using the pickles computed in 4, this notebook makes the publication quality plots. 
+7. `prepare_depth_comparison`: This notebook extracts regions with depths less than 77m for comparison with the shaloows cluster. 
+8. `compare_depth_distributions`: run after `separate_daily_data_into_clusters.ipynb` and `prepare_depth_comparison`. This notebook compares the clustering approach for dividing up the domain to one that uses a simpler depth delineation (supplementary figs). 
+9. `prepare_MLD_fromraw.ipynb`: extracts the MLD for each cluster and saves as an h5 file
+10. `compute_cluster_extreme_fraction`: This notebook computes the fraction of extremes as in 4, but saves them differently for the correlation analysis.
+11. `correlations_fracextreme_climateindices.ipynb`: this notebook compute the Pearson correlation along with the confidence interval from the pickles created in `compute_cluster_extreme_fraction`. 
